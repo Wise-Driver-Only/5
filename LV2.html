@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LV2</title>
+</head>
+<body>
+    <h1>留言板</h1>
+    <input id="msg" type="text" size="60" value=""><input id="sub" type="button" value="发送" style="cursor:pointer;size:20px;">
+    <div id="msg_list"></div>
+<script>
+    var Msg = document.getElementById("msg");
+    var Msg_list = document.getElementById("msg_list");
+    var Sub = document.getElementById("sub");
+    var Ul = document.createElement("ul");
+    Msg_list.appendChild(Ul);
+    Sub.onclick = function(){
+        let Msgvalue = Msg.value;
+        var Li = document.createElement("li");
+        var arrayLi = Ul.getElementsByTagName("li");
+        Li.innerHTML = Msgvalue;
+        if(arrayLi.length>0){
+            Ul.insertBefore(Li,arrayLi[0]);
+        }
+        else{
+            Ul.appendChild(Li);
+        }
+        Msg.value = '';
+    }
+</script>
+</body>
+</html>

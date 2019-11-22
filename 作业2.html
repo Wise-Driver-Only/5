@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 作业2</title>
+</head>
+<body>
+    <img src="群臭鼬.jpg">
+<ul id="skunk" style=" cursor:pointer;width: 50px;margin: 0px;">
+    <li>有</li>
+    <li>⑧</li>
+    <li>说</li>
+    <li>⑨</li>
+    <li>确</li>
+    <li>⑩</li>
+</ul>
+<script>
+    (function(){
+        var skunk = document.getElementById('skunk');
+        var num = num.getElementById('li');
+        for (var i=0;i<skunk.length;i++){
+            num[i].addEventListener('click',showNum,false);
+        };
+        function showNum(e)
+        {
+            var x = e.target;
+            alert("The word is"+x.innerHTML);
+        }
+    });
+    (function(){
+        skunk = document.getElementById('skunk');
+        skunk.addEventListener('click',showNum,false);
+        function showNum(e){
+            var x = e.target;
+            if(x.nodeName.toLowerCase()==='li'){
+                alert('The word is' + x.innerHTML);
+            }
+        }
+    })();
+    let color = document.querySelectorAll("li");
+    for(let i=0;i<6;i++){
+        if(i % 2==0){
+            color[i].style.color="green";
+        }
+        else{
+            color[i].style.color="red";
+        }
+    }
+</script>
+</body>
+</html>

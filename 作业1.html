@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业1</title>
+    
+</head>
+<body>
+    <img src="群臭鼬.jpg">
+    <div id="class" style="width: 200px;height: 200px;">
+        班徽设计太难了，救救孩子吧！  
+    </div>
+    <button id="theme" onclick="change_theme('black')">改变颜色</button>
+    <input id="add" style="width: 20px;height: 20px;" type="button" value="+"></innput>
+    <input  id="decline" style="width: 20px;height: 20px;" type="button" value="-"></input>
+    <script>
+        let theme = document.getElementById('theme');
+        theme.onclick =function()
+        {
+            document.body.style.backgroundColor = 'black';
+            document.getElementById('class').style.color = 'white';
+        }
+        window.onload = function(){
+            let add = document.getElementById("add");
+            let decline = document.getElementById("decline");
+            let div = document.getElementById("class");
+            let size = 14;
+            add.onclick = function(){
+                size++;
+                div.style.fontSize = size + "px";
+            };
+            decline.onclick = function(){
+                size--;
+                div.style.fontSize = size + "px";
+            }
+        }
+    </script>
+</body>
+</html>
